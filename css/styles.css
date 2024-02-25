@@ -2,44 +2,32 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    scrollbar-width: none;
 }
-
 body{
     display: flex;
     flex-direction: column;
     height: 100vh;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Fira Sans", sans-serif;
+    color: white;
+    scrollbar-width: none;
 }
 
+/*---HEADER + NAV---*/
 header{
     display: grid;
-    grid-template-columns: auto 2fr 2fr;
-    grid-template-areas: "logo h1 nav";
+    grid-template-columns: auto 2fr;
+    grid-template-areas: "logo nav";
     padding: 12px;
-    background-color: #3a3c42;
-    box-shadow: 0px 0px 8px rgba(0, 0, 0, .5);
+    background-color: #14111a;
 }
-
-h1{
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    font-weight: bold;
-    grid-area: h1;
-    color: #dfdee0;
-    margin-left: 8px;
-}
-
-#logo{
+.logo{
     display: flex;
     justify-content: right;
     align-items: center;
     grid-area: logo;
-    height: 48px;
+    height: 64px;
     margin-left: 20px;
 }
-
 nav{
     display: flex;
     justify-content: right;
@@ -47,24 +35,149 @@ nav{
     font-weight: bold;
     grid-area: nav;
 }
-
 nav a{
     text-decoration: none;
     color: #dfdee0;
     margin-right: 20px;
+    font-weight: 400;
+    font-style: normal;
+}
+nav a:hover{
+    color: #bc36de;
+    transition: .3s ease;
+}
+nav a:not(hover){
+    transition: .3s ease;
 }
 
+/*---MAIN---*/
 main{
     padding: 40px 120px 40px;
+    background-color: #14111a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 3rem;
+    font-weight: 800;
+    font-style: normal;
+}
+#h1-gradiente{
+    background: linear-gradient(to right, #de3636, #363ede);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+#contenedor-creditos{
+    background-color: #14111a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    border: #5e5b71 1px solid;
+    border-radius: 24px;
+    padding: 12px; 
+    margin: 30px auto 20px;
+    box-shadow: 0px 0px 8px;
+}
+#contenedor-creditos:hover{
+    box-shadow: 0px 0px 20px #de3636;
+    transition: .2s ease;
+    cursor: pointer;
+}
+#contenedor-creditos:not(hover){
+    transition: .2s ease;
+}
+#creditos{
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.2rem;
+}
+#links{
+    display: flex;
+}
+#links a{
+    margin: 10px;
+}
+#links a img{
+    height: 32px;
+}
+#links a img:hover{
+    transform: scale(1.2);
+    transition: .3s ease;
+}
+#links a img:not(hover){
+    transition: .3s ease;
+}
+#tecno{
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.2rem;
+    margin: 20px;
 }
 
+
+/*---FOOTER---*/
 footer{
     bottom: 0;
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    background-color: #dfdee0;
+    background-color: rgb(5, 5, 5);
     padding: 20px;
-    box-shadow: 0px 0px 8px rgba(0, 0, 0, .5);
 }
+
+footer p{
+    font-weight: 300;
+    font-style: normal;
+}
+
+/*---BLOB---*/
+.blob1{
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: linear-gradient(
+        180deg,
+        #de3636,
+        #363ede 
+    );
+    mix-blend-mode: color-dodge;
+    -webkit-animation: move 20s infinite alternate;
+    animation: move 20s infinite alternate;
+    transition: 1s cubic-bezier(0.07, 0.8, 0.16, 1);
+    filter: blur(15px);
+    -webkit-filter: blur(15px);
+    pointer-events: none; /*IMPORTANTE*/
+}
+  
+  @-webkit-keyframes move {
+    from {
+      transform: translate(-100px, 200px) rotate(-90deg);
+      border-radius: 24% 76% 35% 65% / 27% 36% 64% 73%;
+    }
+  
+    to {
+      transform: translate(1000px, 300px) rotate(-10deg);
+      border-radius: 76% 24% 33% 67% / 68% 55% 45% 32%;
+    }
+  }
+  
+  @keyframes move {
+    from {
+      transform: translate(-100px, 200px) rotate(-90deg);
+      border-radius: 24% 76% 35% 65% / 27% 36% 64% 73%;
+    }
+  
+    to {
+      transform: translate(1000px, 300px) rotate(-10deg);
+      border-radius: 76% 24% 33% 67% / 68% 55% 45% 32%;
+    }
+  }
+
