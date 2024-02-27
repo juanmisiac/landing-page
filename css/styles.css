@@ -214,45 +214,112 @@ footer p{
 }
 
 /*---BLOB---*/
-.blob{
+.blob1{
     position: absolute;
     width: 400px;
-    height: 400px;
+    height: 600px;
     background: linear-gradient(
         180deg,
         #de3636,
         #363ede 
     );
     mix-blend-mode: color-dodge;
-    -webkit-animation: move 20s infinite alternate;
-    animation: move 20s infinite alternate;
+    -webkit-animation: spin 30s linear infinite;
+    animation: spin 30s linear infinite;
     transition: 1s cubic-bezier(0.07, 0.8, 0.16, 1);
-    filter: blur(15px);
-    -webkit-filter: blur(15px);
+    filter: blur(80px);
+    -webkit-filter: blur(80px);
     pointer-events: none; /*IMPORTANTE*/
+    top: 100px;
+    left: -70px;
+    z-index: 9;
+}
+
+.blob2 {
+    position: absolute;
+    width: 400px;
+    height: 600px;
+    background: linear-gradient(
+        180deg,
+        #de3636,
+        #363ede 
+    );
+    mix-blend-mode: color-dodge;
+    -webkit-animation: spin 30s linear infinite;
+    animation: spin 30s linear infinite;
+    transition: 1s cubic-bezier(0.07, 0.8, 0.16, 1);
+    filter: blur(80px);
+    -webkit-filter: blur(80px);
+    pointer-events: none; /*IMPORTANTE*/
+    top: 90px; 
+    right: 0; 
+    z-index: 10;
 }
   
-  @-webkit-keyframes move {
+@-webkit-keyframes spin {
     from {
-      transform: translate(10px, 100px) rotate(-90deg);
+      transform: rotate(0deg);
       border-radius: 24% 76% 35% 65% / 27% 36% 64% 73%;
     }
   
     to {
-      transform: translate(1000px, 250px) rotate(-10deg);
+      transform: rotate(360deg);
       border-radius: 76% 24% 33% 67% / 68% 55% 45% 32%;
     }
-  }
-  
-  @keyframes move {
-    from {
-      transform: translate(10px, 100px) rotate(-90deg);
-      border-radius: 24% 76% 35% 65% / 27% 36% 64% 73%;
-    }
-  
-    to {
-      transform: translate(1000px, 250px) rotate(-10deg);
-      border-radius: 76% 24% 33% 67% / 68% 55% 45% 32%;
-    }
-  }
+}
 
+@keyframes spin {
+    from {
+      transform: rotate(0deg); 
+      border-radius: 24% 76% 35% 65% / 27% 36% 64% 73%;
+    }
+  
+    to {
+      transform: rotate(360deg);
+      border-radius: 76% 24% 33% 67% / 68% 55% 45% 32%;
+    }
+}
+
+@media (375px <= width <= 768px) {
+
+    .blob2{
+        display: none;
+    }
+    .blob1{
+        top: 100;
+        left: 20%;
+        height: 500px;
+    }
+    #landing-section{
+        margin: 50px 0 100px;
+        height: auto;
+    }
+    h1{
+        font-size: 2.5rem;
+    }
+    #creditos{
+        font-size: 1rem;
+    }
+    #links a img{
+        height: 32px;
+    }
+    #btn-consulta{
+        font-size: 1rem;
+        padding: 10px;
+    }
+    #form-section{
+        width: auto;
+        margin: 0;
+        z-index: 10;
+    }
+    input[type="text"],
+    input[type="email"],
+    textarea{
+        display: inline;
+        width: 300px;
+        font-size: 12px;
+    }
+    textarea{
+        height: 200px;
+    } 
+}
