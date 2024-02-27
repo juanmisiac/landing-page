@@ -2,6 +2,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
 }
 body{
     display: flex;
@@ -9,7 +11,6 @@ body{
     height: 100vh;
     font-family: "Fira Sans", sans-serif;
     color: white;
-    scrollbar-width: none;
 }
 
 /*---HEADER + NAV---*/
@@ -18,7 +19,7 @@ header{
     grid-template-columns: auto 2fr;
     grid-template-areas: "logo nav";
     padding: 12px;
-    background-color: #14111a;
+    background-color: #171717;
 }
 .logo{
     display: flex;
@@ -53,19 +54,29 @@ nav a:not(hover){
 /*---MAIN---*/
 main{
     padding: 40px 120px 40px;
-    background-color: #14111a;
+    background-color: #171717;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+#landing-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: content-box;
+    width: auto;
+    height: 100vh;
 }
 h1{
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
     flex-direction: column;
-    font-size: 3rem;
+    font-size: 5rem;
     font-weight: 800;
     font-style: normal;
+    z-index: 1;
 }
 #h1-gradiente{
     background: linear-gradient(to right, #de3636, #363ede);
@@ -74,29 +85,17 @@ h1{
     -webkit-background-clip: text;
 }
 #contenedor-creditos{
-    background-color: #14111a;
+    background-color: transparent;
     display: flex;
     justify-content: center;
     align-items: center;
     width: fit-content;
-    border: #5e5b71 1px solid;
-    border-radius: 24px;
-    padding: 12px; 
-    margin: 30px auto 20px;
-    box-shadow: 0px 0px 8px;
-}
-#contenedor-creditos:hover{
-    box-shadow: 0px 0px 20px #de3636;
-    transition: .2s ease;
-    cursor: pointer;
-}
-#contenedor-creditos:not(hover){
-    transition: .2s ease;
+    margin: 25px auto 10px;
 }
 #creditos{
     font-weight: 400;
     font-style: normal;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
 }
 #links{
     display: flex;
@@ -105,7 +104,7 @@ h1{
     margin: 10px;
 }
 #links a img{
-    height: 32px;
+    height: 36px;
 }
 #links a img:hover{
     transform: scale(1.2);
@@ -114,13 +113,89 @@ h1{
 #links a img:not(hover){
     transition: .3s ease;
 }
-#tecno{
-    font-weight: 400;
+#btn-consulta{
+    margin: 30px;
+    border-radius: 30px;
+    background: linear-gradient(to right, #de3636, #363ede);
+    box-shadow: 0px 0px 8px #de3636;
+    z-index: 1;
     font-style: normal;
-    font-size: 1.2rem;
-    margin: 20px;
+    font-weight: 500;
+    font-size: 1.20rem;
+    text-decoration: none;
+    color: white;
+    padding: 15px;
+}
+#btn-consulta:hover{
+    transition: .3s ease;
+    transform: scale(1.05);
+    border-radius: 26px;
+    box-shadow: 0px 0px 12px #bc36de;
+}
+#btn-consulta:not(hover){
+    transition: .3s ease;
 }
 
+/*---FORM-SECTION---*/
+
+#form-section{
+    width: 800px;
+    margin: 0px auto 60px;
+    padding: 20px;
+    border: 1px solid rgba(212, 212, 212, .2);
+    border-radius: 10px;
+    background-color: black;
+    box-shadow: 0px 0px 100px rgba(212, 212, 212, .5);
+}
+  
+.form{
+    margin-bottom: 20px;
+}
+  
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+  
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #171717;
+    outline: none;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-family: "Fira Sans", sans-serif;  
+}
+input[type="text"]::placeholder,
+input[type="email"]::placeholder{
+    color: rgba(212, 212, 212, .8);
+    opacity: 1;
+}
+textarea{
+    height: 100px;
+    resize: none;
+}
+  
+#btn-enviar{
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+#btn-enviar:hover {
+    transition: .2s ease;
+    background-color: #0056b3;
+}
+#btn-enviar:not(hover){
+    transition: .2s ease;
+}
+  
 
 /*---FOOTER---*/
 footer{
@@ -139,7 +214,7 @@ footer p{
 }
 
 /*---BLOB---*/
-.blob1{
+.blob{
     position: absolute;
     width: 400px;
     height: 400px;
@@ -159,24 +234,24 @@ footer p{
   
   @-webkit-keyframes move {
     from {
-      transform: translate(-100px, 200px) rotate(-90deg);
+      transform: translate(10px, 100px) rotate(-90deg);
       border-radius: 24% 76% 35% 65% / 27% 36% 64% 73%;
     }
   
     to {
-      transform: translate(1000px, 300px) rotate(-10deg);
+      transform: translate(1000px, 250px) rotate(-10deg);
       border-radius: 76% 24% 33% 67% / 68% 55% 45% 32%;
     }
   }
   
   @keyframes move {
     from {
-      transform: translate(-100px, 200px) rotate(-90deg);
+      transform: translate(10px, 100px) rotate(-90deg);
       border-radius: 24% 76% 35% 65% / 27% 36% 64% 73%;
     }
   
     to {
-      transform: translate(1000px, 300px) rotate(-10deg);
+      transform: translate(1000px, 250px) rotate(-10deg);
       border-radius: 76% 24% 33% 67% / 68% 55% 45% 32%;
     }
   }

@@ -17,38 +17,62 @@
 	<header>
 		<img src="./img/logo96.png" alt="logo" class="logo">
 		<nav>
-			<a href="">Home</a>
+			<a href="">Inicio</a>
 			<a href="">¿Quienes somos?</a>
 			<a href="">Contacto</a>
 		</nav>
 	</header>
 
-	<div class="blob1"></div>
+	<div class="blob"></div>
 
 	<main>
-		<h1>
-			Una landing page <br> <span id="h1-gradiente"> basica y moderna. </span>
-		</h1>
-
-		<div id="contenedor-creditos">
-			<p id="creditos">Desarrollada por Juan Misiac</p>
-		</div>
-
-		<div id="links">
-			<a href="https://www.linkedin.com/in/juan-misiac-462b95262/" target="_blank">
-				<img src="./img/linkedin.svg" alt="LinkedIn">
-			</a>
-			<a href="https://github.com/juanmisiac" target="_blank">
-				<img src="./img/github.svg" alt="GitHub">
-			</a>
-		</div>
-
 		
+		<section id="landing-section">
+			<h1>
+				Una landing page <br> <span id="h1-gradiente"> basica y moderna. </span>
+			</h1>
+
+			<div id="contenedor-creditos">
+				<p id="creditos">Desarrollada por Juan Misiac</p>
+			</div>
+
+			<div id="links">
+				<a href="https://www.linkedin.com/in/juan-misiac-462b95262/" target="_blank">
+					<img src="./img/linkedin.svg" alt="LinkedIn">
+				</a>
+				<a href="https://github.com/juanmisiac" target="_blank">
+					<img src="./img/github.svg" alt="GitHub">
+				</a>
+			</div>
+
+			<a href="#form-section" id="btn-consulta">Encarga una ahora</a>
+		</section>
+
+		<section id="form-section">
+			<form action="https://formsubmit.co/86af2562b886d66ea07fd343e97d2c46" method="POST">
+				<div class="form">
+					<label for="name">Nombre completo:</label>
+					<input type="text" id="name" name="name" placeholder="Ingresa tu nombre" autocomplete="name" required>
+				</div>
+				<div class="form">
+					<label for="email">Email:</label>
+					<input type="email" id="email" name="email" placeholder="Ingresa tu correo" autocomplete="email" required>
+				</div>
+				<div class="form">
+					<label for="message">Mensaje:</label>
+					<textarea id="message" name="message" required></textarea>
+				</div>
+				<button type="submit" id="btn-enviar">Enviar</button>
+
+				<input type="hidden" name="_next" value="http://127.0.0.1:5500/">
+				<input type="hidden" name="_captcha" value="false">
+			</form>
+		</section>
 
 	</main>
 
 	<footer>
-		<img src="./img/logo96.png" alt="logo" class="logo">
+		<a href="#"><img src="./img/logo96.png" alt="logo" class="logo"></a>
 		<p>Sitio desarrollado por Juan Misiac</p>
 	</footer>
 
