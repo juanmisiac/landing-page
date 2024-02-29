@@ -11,6 +11,7 @@ body{
     height: 100vh;
     font-family: "Fira Sans", sans-serif;
     color: white;
+    overflow-x: hidden;
 }
 
 /*---HEADER + NAV---*/
