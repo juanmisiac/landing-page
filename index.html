@@ -10,6 +10,9 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@200;300;400;500;800&display=swap" rel="stylesheet">
+	
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+	<script type="text/javascript">emailjs.init('xAvsArapBlRFgkey6')</script>
 
 </head>
 <body>
@@ -32,11 +35,9 @@
 			<h1>
 				Una landing page <br> <span id="h1-gradiente"> basica y moderna. </span>
 			</h1>
-
 			<div id="contenedor-creditos">
 				<p id="creditos">Desarrollada por Juan Misiac</p>
 			</div>
-
 			<div id="links">
 				<a href="https://www.linkedin.com/in/juan-misiac-462b95262/" target="_blank">
 					<img src="./img/linkedin.svg" alt="LinkedIn">
@@ -45,29 +46,24 @@
 					<img src="./img/github.svg" alt="GitHub">
 				</a>
 			</div>
-
 			<a href="#form-section" id="btn-consulta">Encarga una ahora</a>
 		</section>
 
 		<section id="form-section">
-			<form action="https://formsubmit.co/86af2562b886d66ea07fd343e97d2c46" method="POST">
-				<div class="form">
-					<label for="name">Nombre completo:</label>
-					<input type="text" id="name" name="name" placeholder="Ingresa tu nombre" autocomplete="name" required>
+			<form id="form">
+				<div class="field">
+					<label for="from_name">Nombre</label>
+					<input type="text" name="from_name" id="from_name" placeholder="Ingresa tu nombre" required>
 				</div>
-				<div class="form">
-					<label for="email">Email:</label>
-					<input type="email" id="email" name="email" placeholder="Ingresa tu correo" autocomplete="email" required>
+				<div class="field">
+					<label for="email_id">Email</label>
+					<input type="text" name="email_id" id="email_id" placeholder="Ingresa tu correo" required>
 				</div>
-				<div class="form">
-					<label for="message">Mensaje:</label>
-					<textarea id="message" name="message" required></textarea>
+				<div class="field">
+					<label for="message">Mensaje</label>
+					<textarea type="text" name="message" id="message" required></textarea>
 				</div>
 				<button type="submit" id="btn-enviar">Enviar</button>
-
-				<input type="hidden" name="_next" value="http://127.0.0.1:5500/">
-				<input type="hidden" name="_captcha" value="false">
-			</form>
 		</section>
 
 	</main>
